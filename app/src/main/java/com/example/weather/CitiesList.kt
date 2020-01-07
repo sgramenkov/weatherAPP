@@ -69,7 +69,7 @@ class CitiesList() : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //request(searchET.text.toString())
+                request(searchET.text.toString())
                 //iWeatherPresenter.loadData(searchET.text.toString())
             }
         })
