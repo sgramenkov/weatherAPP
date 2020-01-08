@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.weather.adapters.PagerAdapter
-import com.example.weather.model.Constant
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +22,7 @@ lateinit var viewPager: ViewPager
         val tabLayout: TabLayout = findViewById(R.id.tablayout)
         tabLayout.setupWithViewPager(viewPager)
         Constant.activityContext=this
+
         /*if (isOnline(applicationContext)) {
             val service = RetrofitFactory().makeRetrofitService()
             CoroutineScope(Dispatchers.IO).launch {

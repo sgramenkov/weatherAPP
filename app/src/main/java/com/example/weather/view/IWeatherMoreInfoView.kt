@@ -1,9 +1,7 @@
 package com.example.weather.view
 
-import android.view.View
 import com.example.weather.model.WeatherInfo
 
-
-interface IWeatherView {
+interface IWeatherMoreInfoView {
     fun bindViews(data:WeatherInfo)
 }

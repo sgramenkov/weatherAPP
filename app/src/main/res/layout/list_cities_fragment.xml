@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingVertical="10dp">
+    android:paddingTop="10dp">
 
     <EditText
         android:layout_marginHorizontal="10dp"
@@ -16,13 +16,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
     <TextView
         android:layout_marginHorizontal="10dp"
         android:textSize="24sp"
         android:id="@+id/history"
+        android:textColor="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="History"
@@ -53,6 +51,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/search_et">
         <TextView
+            android:textColor="@android:color/black"
             android:layout_marginHorizontal="10dp"
             android:id="@+id/city_tv"
             android:layout_width="match_parent"
