@@ -1,8 +1,9 @@
 package com.example.weather.model
 
 import android.util.Log
-import android.widget.Toast
+import com.example.weather.Data
 import com.example.weather.RetrofitFactory
+import com.example.weather.WeatherInfo
 import com.example.weather.presenter.IWeatherMoreInfoPresenter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

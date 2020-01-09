@@ -2,7 +2,7 @@ package com.example.weather.presenter
 
 import android.widget.ProgressBar
 import com.example.weather.model.IWeatherModel
-import com.example.weather.model.WeatherInfo
+import com.example.weather.WeatherInfo
 import com.example.weather.model.WeatherModel
 import com.example.weather.view.IWeatherView
 

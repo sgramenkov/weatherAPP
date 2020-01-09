@@ -1,8 +1,7 @@
 package com.example.weather.presenter
 
 import android.widget.ProgressBar
-import com.example.weather.model.Data
-import com.example.weather.model.WeatherInfo
+import com.example.weather.WeatherInfo
 
 interface IWeatherPresenter {
     fun loadData(city:String,progressBar: ProgressBar?)

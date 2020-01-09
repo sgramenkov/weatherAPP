@@ -1,4 +1,4 @@
-package com.example.weather.model
+package com.example.weather
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -22,7 +22,7 @@ data class WeatherInfo(
     val sunset: String,
     @SerializedName("weather")
     @Expose
-    val weather:Weather
+    val weather: Weather
 
 )
 

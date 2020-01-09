@@ -40,12 +40,10 @@ class CitiesListView() : Fragment(), ICitiesListView {
             .inflate(R.layout.list_cities_fragment, container, false)
         initViews(view)
         realm = Realm.getDefaultInstance()
-        getData()
-
-        citiesListPresenter = CitiesListPresenter(this, context!!)
+        citiesListPresenter = CitiesListPresenter(this)
+        val list=citiesListPresenter!!.getData()
+        initRecycler(list)
         Constant.listCitiesContext = this
-
-
         searchET.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
@@ -61,7 +59,6 @@ class CitiesListView() : Fragment(), ICitiesListView {
 
             }
         })
-        Log.e("tv", cityTV.text.toString())
         return view
     }
 
@@ -80,29 +77,7 @@ class CitiesListView() : Fragment(), ICitiesListView {
         recycler.adapter = SeenCitiesAdapter(list)
     }
 
-    fun saveData() {
-        realm.executeTransactionAsync({ bgRealm ->
-            bgRealm.insertOrUpdate(
-                SeenModel(cityTV.text.toString())
-            )
-        }, {
-            Toast.makeText(context, "Success ${cityTV.text}", Toast.LENGTH_SHORT).show()
-            getData()
-        }, {
-            Toast.makeText(context, "Fail write", Toast.LENGTH_SHORT).show()
-        })
-        getData()
-    }
 
-    fun getData() {
-        var list: ArrayList<SeenModel> = arrayListOf()
-        val realmResult = realm.where(SeenModel::class.java).findAll()
-        for (i in realmResult.indices) {
-            val tempData = SeenModel(realmResult[i]!!.cityName)
-            list.add(tempData)
-        }
-        initRecycler(list)
-    }
 }
 
 

@@ -1,8 +1,7 @@
 package com.example.weather.presenter
 
-import com.example.weather.model.IWeatherModel
 import com.example.weather.model.IWeatherMoreInfoModel
-import com.example.weather.model.WeatherInfo
+import com.example.weather.WeatherInfo
 import com.example.weather.model.WeatherMoreInfoModel
 import com.example.weather.view.IWeatherMoreInfoView
 

@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.weather.R
 import com.example.weather.Constant
-import com.example.weather.model.WeatherInfo
+import com.example.weather.WeatherInfo
 import com.example.weather.presenter.WeatherPresenter
 
 @Suppress("DEPRECATION")

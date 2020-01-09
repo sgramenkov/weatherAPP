@@ -3,7 +3,11 @@ package com.example.weather.model
 import android.util.Log
 import android.widget.ProgressBar
 import com.example.weather.Constant
+import com.example.weather.Data
 import com.example.weather.RetrofitFactory
+import com.example.weather.WeatherInfo
+import com.example.weather.presenter.CitiesListPresenter
+import com.example.weather.presenter.ICitiesListPresenter
 import com.example.weather.presenter.IWeatherPresenter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,14 +39,11 @@ class WeatherModel(val iWeatherPresenter: IWeatherPresenter) : IWeatherModel {
                             response: Response<Data>
                         ) {
 
-                            /* Toast.makeText(Constant.activityContext, "success", Toast.LENGTH_LONG)
-                                 .show()*/
                             try {
                                 list = response.body()!!
                                 val weather: List<WeatherInfo> = list.data
                                 val param = weather[0]
                                 iWeatherPresenter.init(param)
-                                //listCitiesContext.saveData()
                                 if (progressBar != null)
                                     progressBar.alpha = 0f
                             } catch (err: NullPointerException) {
@@ -62,6 +63,7 @@ class WeatherModel(val iWeatherPresenter: IWeatherPresenter) : IWeatherModel {
 
     override fun loadDataFromSearch(city: String) {
         var list: Data
+        var iCitiesListPresenter:ICitiesListPresenter?=null
         val service = RetrofitFactory().makeRetrofitService()
         CoroutineScope(Dispatchers.IO).launch {
             val response = service.getWeather(city.capitalize())
@@ -76,9 +78,6 @@ class WeatherModel(val iWeatherPresenter: IWeatherPresenter) : IWeatherModel {
                             call: Call<Data>,
                             response: Response<Data>
                         ) {
-
-                            /* Toast.makeText(Constant.activityContext, "success", Toast.LENGTH_LONG)
-                                 .show()*/
                             try {
                                 list = response.body()!!
                                 val weather: List<WeatherInfo> = list.data
@@ -87,8 +86,8 @@ class WeatherModel(val iWeatherPresenter: IWeatherPresenter) : IWeatherModel {
                                 listCitiesContext.cityTV.text = param.city_name
                                 listCitiesContext.searched.alpha = 1f
                                 listCitiesContext.cityTV.setOnClickListener() {
-                                    listCitiesContext.saveData()
-                                    //listCitiesContext.getData()
+                                    iCitiesListPresenter=CitiesListPresenter(listCitiesContext)
+                                    iCitiesListPresenter!!.saveData(Constant.listCitiesContext.cityTV)
                                     Constant.activityContext.viewPager.currentItem = 1
                                     listCitiesContext.searchET.setText("")
                                     listCitiesContext.cityTV.text = ""
