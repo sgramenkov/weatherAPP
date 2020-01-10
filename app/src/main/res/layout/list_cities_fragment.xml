@@ -23,7 +23,7 @@
         android:textColor="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="History"
+        android:text="Search history"
         app:layout_constraintTop_toBottomOf="@id/search_et" />
     <View
         android:layout_marginHorizontal="10dp"

@@ -25,6 +25,7 @@ lateinit var viewPager: ViewPager
                 PagerAdapter(supportFragmentManager)
             viewPager.offscreenPageLimit=3
             viewPager.adapter = fragmentAdapter
+            viewPager.currentItem=1
             val tabLayout: TabLayout = findViewById(R.id.tablayout)
             tabLayout.setupWithViewPager(viewPager)
             Constant.activityContext=this

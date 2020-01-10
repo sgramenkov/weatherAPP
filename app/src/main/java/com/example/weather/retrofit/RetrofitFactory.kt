@@ -1,8 +1,7 @@
-package com.example.weather
+package com.example.weather.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
 
 class RetrofitFactory() {
     val BASE_URL="https://api.weatherbit.io/v2.0/"

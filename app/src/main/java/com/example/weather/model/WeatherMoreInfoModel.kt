@@ -2,7 +2,7 @@ package com.example.weather.model
 
 import android.util.Log
 import com.example.weather.Data
-import com.example.weather.RetrofitFactory
+import com.example.weather.retrofit.RetrofitFactory
 import com.example.weather.WeatherInfo
 import com.example.weather.presenter.IWeatherMoreInfoPresenter
 import kotlinx.coroutines.CoroutineScope

@@ -4,7 +4,7 @@ import android.util.Log
 import android.widget.ProgressBar
 import com.example.weather.Constant
 import com.example.weather.Data
-import com.example.weather.RetrofitFactory
+import com.example.weather.retrofit.RetrofitFactory
 import com.example.weather.WeatherInfo
 import com.example.weather.presenter.CitiesListPresenter
 import com.example.weather.presenter.ICitiesListPresenter
